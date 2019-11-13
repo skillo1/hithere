@@ -11,3 +11,27 @@ blocks:
         - name: 'Job #1'
           commands:
             - checkout
+    dependencies: []
+  - name: 'Block #2'
+    dependencies:
+      - 'Block #1'
+    task:
+      jobs:
+        - name: 'Job #1'
+          commands: []
+  - name: 'Block #3'
+    dependencies:
+      - 'Block #1'
+      - 'Block #2'
+    task:
+      jobs:
+        - name: 'Job #1 ls'
+          commands:
+            - ls
+  - name: 'Block #4'
+    dependencies:
+      - 'Block #3'
+    task:
+      jobs:
+        - name: 'Job #1'
+          commands: []
