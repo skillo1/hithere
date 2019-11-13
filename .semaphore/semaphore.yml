@@ -29,8 +29,7 @@ blocks:
           commands:
             - ls
         - name: 'Job #2'
-          commands:
-            - mkdir
+          commands: []
   - name: 'Block #4'
     dependencies:
       - 'Block #3'
