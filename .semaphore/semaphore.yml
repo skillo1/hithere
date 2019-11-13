@@ -11,6 +11,24 @@ blocks:
         - name: 'Job #1'
           commands:
             - checkout
+      env_vars:
+        - name: FOO_1
+          value: BAR_1
+        - name: FOO_2
+          value: BAR_2
+      prologue:
+        commands:
+          - start point
+      epilogue:
+        always:
+          commands:
+            - the big lady sang
+        on_pass:
+          commands:
+            - success
+        on_fail:
+          commands:
+            - crap
     dependencies: []
   - name: 'Block #2'
     dependencies:
